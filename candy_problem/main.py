@@ -36,11 +36,26 @@ write tests to handle edge cases.
 
 #1
 def get_friends_favorite_candy_count(favorites):
-    pass
+    popular_candy = {}
 
+    for friend in favorites: 
+        for candy in friend[1]: 
+            if candy not in popular_candy:
+                popular_candy[candy] = 1
+            else: popular_candy[candy] += 1
+    return popular_candy
 #2
 def create_new_candy_data_structure(data):
-    pass 
+    new_candy_data = {} 
+
+    for friends in data: 
+        person = friends[0]
+        for candy in friends[1]:
+            if candy not in new_candy_data:
+                new_candy_data[candy] = []
+            new_candy_data[candy].append(person)
+    print (new_candy_data)
+    return new_candy_data
 
 #3
 def get_friends_who_like_specific_candy(data, candy_name):
